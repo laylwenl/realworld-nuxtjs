@@ -3,8 +3,7 @@
     {
       "name": "RealWorld",
       "script": "npm",
-      "args": "start",
-      "max_memory_restart":"200M"
+      "args": "start"
     }
   ]
 }
