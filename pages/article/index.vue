@@ -1,75 +1,85 @@
 <template>
   <div class="article-page">
 
-    <div class="banner">
-      <div class="container">
+  <div class="banner">
+    <div class="container">
 
-        <h1>{{ article.title }}</h1>
+      <h1>{{article.title}}</h1>
 
-        <article-meta :article="article" />
+      <ArticleMeta :article="article"/>
 
+    </div>
+  </div>
+
+  <div class="container page">
+
+    <div class="row article-content">
+      <div class="col-md-12" v-html="article.body">
       </div>
+      <ul class="tag-list">
+        <li class="tag-default tag-pill tag-outline" v-for="tag in article.tagList" :key="tag">
+          {{tag}}
+        </li>
+      </ul>
     </div>
 
-    <div class="container page">
+    <hr />
 
-      <div class="row article-content">
-        <div class="col-md-12" v-html="article.body"></div>
-      </div>
+    <div class="article-actions">
+      <ArticleMeta :article="article"/>
+    </div>
 
-      <hr />
+    <div class="row">
 
-      <div class="article-actions">
-        <article-meta :article="article" />
-      </div>
-
-      <div class="row">
-
-        <div class="col-xs-12 col-md-8 offset-md-2">
-
-          <article-comments :article="article" />
-
-        </div>
-
+      <div class="col-xs-12 col-md-8 offset-md-2">
+          <ArticleComment v-if="user" :article="article" />
+          <ArticleUnlogin v-else />
       </div>
 
     </div>
 
   </div>
+
+</div>
 </template>
 
 <script>
-import { getArticle } from '@/api/article'
+import { mapState } from 'vuex'
 import MarkdownIt from 'markdown-it'
+import { getArticle } from '@/api/article'
 import ArticleMeta from './components/article-meta'
-import ArticleComments from './components/article-comments'
-
+import ArticleComment from './components/article-comment'
+import ArticleUnlogin from './components/article-unlogin'
 export default {
-  name: 'ArticleIndex',
+  name: 'ArticleIndx',
+  components: {
+    ArticleMeta,
+    ArticleComment,
+    ArticleUnlogin
+  },
   async asyncData ({ params }) {
     const { data } = await getArticle(params.slug)
     const { article } = data
     const md = new MarkdownIt()
     article.body = md.render(article.body)
     return {
-      article
+      article: article
     }
   },
-  components: {
-    ArticleMeta,
-    ArticleComments
-  },
-  head () {
+  head() {
     return {
       title: `${this.article.title} - RealWorld`,
       meta: [
-        { hid: 'description', name: 'description', content: this.article.description }
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.description
+        }
       ]
     }
-  }
+  },
+  computed: {
+    ...mapState(['user'])
+  },
 }
 </script>
-
-<style>
-
-</style>

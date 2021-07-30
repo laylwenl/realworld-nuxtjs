@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/",
+    "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/layout",
+    "children": [
+      {
+        "name": "home",
+        "path": "",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/home"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/login"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/login"
+      },
+      {
+        "path": "/profile/:username",
+        "name": "profile",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/profile"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/settings"
+      },
+      {
+        "path": "/editor/:slug?",
+        "name": "editor",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/editor"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "/Users/mac/JALProjects/lagou-fed/fed-e-task-03-03/code/realworld-nuxtjs/pages/article"
+      }
+    ]
+  }
+]
