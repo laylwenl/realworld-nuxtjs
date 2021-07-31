@@ -1,7 +1,6 @@
-import Vue from 'vue'
-import dayjs from 'dayjs'
+import vue from 'vue';
+import dayjs from 'dayjs';
 
-// {{ 表达式 | 过滤器 }}
-Vue.filter('date', (value, format = 'YYYY-MM-DD HH:mm:ss') => {
-  return dayjs(value).format(format)
+vue.filter('dayjs',function(input,format='MMMM DD, YYYY'){
+  return dayjs(input).format(format);
 })

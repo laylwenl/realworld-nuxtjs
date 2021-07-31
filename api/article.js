@@ -1,55 +1,64 @@
 import { request } from '@/plugins/request'
 
-// 获取公共文章列表
-export const getArticles = params => {
-  return request({
-    method: 'GET',
-    url: '/api/articles',
-    params
-  })
-}
+export const getArticles = params => request("/api/articles", {
+  method: "GET",
+  params
+  //Filter by tag:
+  
+  // ?tag=AngularJS
+  
+  // Filter by author:
+  
+  // ?author=jake
+  
+  // Favorited by user:
+  
+  // ?favorited=jake
+  
+  // Limit number of articles (default is 20):
+  
+  // ?limit=20
+  
+  // Offset/skip number of articles (default is 0):
+  
+  // ?offset=0
+})
 
-// 获取公共文章列表
-export const getYourFeedArticles = params => {
-  return request({
-    method: 'GET',
-    url: '/api/articles/feed',
-    params,
-    // headers: {
-    //   // 添加用户身份，数据格式：Token空格Token数据
-    //   Authorization: `Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDgxMTYsInVzZXJuYW1lIjoibHB6OTk5IiwiZXhwIjoxNTk3NzQxNTA4fQ.2yO8Fss4hYnvsIN2UYHsutQ1hmYqSSAA-UrIRnP4DOY`
-    // }
-  })
-}
+export const getArticleComments = slug => request(`/api/articles/${slug}/comments`, {
+  method: "GET",
+})
+export const getArticle = slug => request(`/api/articles/${slug}`, {
+  method: "GET",
+})
 
-// 添加点赞
-export const addFavorite = slug => {
-  return request({
-    method: 'POST',
-    url: `/api/articles/${slug}/favorite`
-  })
-}
+//要求登录状态
+export const getFeedArticles = params => request("/api/articles/feed", {
+  method: "GET",
+  params,
+  //Filter by tag:
 
-// 取消点赞
-export const deleteFavorite = slug => {
-  return request({
-    method: 'DELETE',
-    url: `/api/articles/${slug}/favorite`
-  })
-}
+  // ?tag=AngularJS
 
-// 获取文章详情
-export const getArticle = slug => {
-  return request({
-    method: 'GET',
-    url: `/api/articles/${slug}`
-  })
-}
+  // Filter by author:
 
-// 获取文章评论
-export const getComments = slug => {
-  return request({
-    method: 'GET',
-    url: `/api/articles/${slug}/comments`
-  })
-}
+  // ?author=jake
+
+  // Favorited by user:
+
+  // ?favorited=jake
+
+  // Limit number of articles (default is 20):
+
+  // ?limit=20
+
+  // Offset/skip number of articles (default is 0):
+
+  // ?offset=0
+})
+
+export const addFavorite = slug => request(`/api/articles/${slug}/favorite`, {
+  method: "POST",
+})
+export const removeFavorite = slug => request(`/api/articles/${slug}/favorite`, {
+  method: "DELETE",
+})
