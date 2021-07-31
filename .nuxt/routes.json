@@ -6,38 +6,46 @@
       {
         "name": "home",
         "path": "/",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\home"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\home",
+        "_name": "_fc8c2aa4"
       },
       {
         "name": "login",
         "path": "/login",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login",
+        "_name": "_9488990c"
       },
       {
         "name": "register",
         "path": "/register",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login",
+        "_name": "_9488990c"
       },
       {
         "name": "profile",
         "path": "/profile/:username",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\profile"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\profile",
+        "_name": "_0ec38d7a"
       },
       {
         "name": "settings",
         "path": "/settings",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\settings"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\settings",
+        "_name": "_5aee3272"
       },
       {
         "name": "editor",
         "path": "/editor/:slug?",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\editor"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\editor",
+        "_name": "_15a24108"
       },
       {
         "name": "article",
         "path": "/article/:slug?",
-        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\article"
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\article",
+        "_name": "_14e45e72"
       }
-    ]
+    ],
+    "_name": "_00fdb939"
   }
 ]
