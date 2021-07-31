@@ -3,7 +3,7 @@
     <!-- 顶部导航 -->
     <nav class="navbar navbar-light">
       <div class="container">
-        <nuxt-link class="navbar-brand" to="/" exact>conduit</nuxt-link>
+        <nuxt-link class="navbar-brand" to="/" exact>lwenl</nuxt-link>
         <ul class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <!-- Add "active" class when you're on that page" -->
@@ -54,7 +54,7 @@
     <!-- 底部 -->
     <footer>
       <div class="container">
-        <nuxt-link to="/" class="logo-font">conduit</nuxt-link>
+        <nuxt-link to="/" class="logo-font">lwenl</nuxt-link>
         <span class="attribution">
           An interactive learning project from
           <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed under MIT.
