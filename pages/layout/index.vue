@@ -1,16 +1,17 @@
 <template>
-  <div id="app">
+  <div>
+    <!-- 顶部导航 -->
     <nav class="navbar navbar-light">
       <div class="container">
-        <nuxt-link class="navbar-brand" to="/">conduit</nuxt-link>
+        <nuxt-link class="navbar-brand" to="/" exact>conduit</nuxt-link>
         <ul class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <!-- Add "active" class when you're on that page" -->
-            <nuxt-link class="nav-link" to="/" extract>Home</nuxt-link>
+            <nuxt-link class="nav-link" to="/" exact>Home</nuxt-link>
           </li>
           <template v-if="user">
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/create/article">
+              <nuxt-link class="nav-link" to="/editor">
                 <i class="ion-compose"></i>&nbsp;New Post
               </nuxt-link>
             </li>
@@ -20,16 +21,19 @@
               </nuxt-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="logout" href>Logout</a>
-            </li>
-            <li class="nav-item">
               <nuxt-link
                 class="nav-link"
-                :to="{name:'profile-username',params:{username:user.username}}"
+                :to="{
+                name:'profile',
+                params:{username:user.username}
+              }"
               >
-                <img class="user-pic" :src="user.image" />
+                <img :src="user.image" class="user-pic" />
                 {{user.username}}
               </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" @click.prevent="logout">退出</a>
             </li>
           </template>
           <template v-else>
@@ -43,12 +47,14 @@
         </ul>
       </div>
     </nav>
-    <!-- conent -->
-    <nuxt />
-    <!-- conent end -->
+
+    <!-- 子路由出口 -->
+    <nuxt-child></nuxt-child>
+
+    <!-- 底部 -->
     <footer>
       <div class="container">
-        <a href="/" class="logo-font">conduit</a>
+        <nuxt-link to="/" class="logo-font">conduit</nuxt-link>
         <span class="attribution">
           An interactive learning project from
           <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed under MIT.
@@ -57,17 +63,27 @@
     </footer>
   </div>
 </template>
+
 <script>
-import { mapState, mapActions } from "vuex";
-const Cookie = process.client ? require("js-cookie") : undefined;
+import { mapState } from "vuex";
+const Cookie = process.client ? require("js-cookie") : "";
 export default {
-  computed: mapState(["user"]),
+  name: "LayoutIndex",
+  computed: {
+    ...mapState(["user"]),
+  },
   methods: {
-    ...mapActions(["clientSetUser"]),
     logout() {
-      this.clientSetUser(null);
+      // 删除客户端缓存数据
+      this.$store.commit("setUser", null);
+      // 删除服务端数据持久化
+      Cookie.set("user", null);
       this.$router.push("/");
     },
   },
+  components: {},
 };
 </script>
+
+<style scoped>
+</style>

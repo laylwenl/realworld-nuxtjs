@@ -1,5 +1,5 @@
-import {request} from '@/plugins/request'
+import {request} from "@/plugins/request"
 
-export const getTags = () => request("/api/tags", {
-  method: "GET",
-})
+export const getTags = ()=>{
+  return request.get('/api/tags')
+}

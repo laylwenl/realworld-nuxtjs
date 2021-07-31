@@ -1,7 +1,7 @@
-module.exports = {
+{
   "apps": [
     {
-      "name": "realworld",
+      "name": "RealWorld",
       "script": "npm",
       "args": "start"
     }

@@ -1,16 +1,9 @@
-import { request } from '@/plugins/request'
-export const getProfile = username => request(`/api/profiles/${username}`, {
-  method: "GET"
-})
+import {request} from "@/plugins/request"
 
-if (typeof window !== 'undefined') {
-  window.getProfile = getProfile
+// 获取用户信息
+export const getProfiles = (username) => {
+  return request({
+    method: 'GET',
+    url: `/api/profiles/${username}`,
+  })
 }
-export const follow = username => request(`/api/profiles/${username}/follow`, {
-  method: "POST"
-})
-
-export const unfollow = username => request(`/api/profiles/${username}/follow`, {
-  method: "DELETE"
-})
-

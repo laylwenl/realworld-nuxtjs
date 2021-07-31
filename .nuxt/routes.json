@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/",
+    "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\layout",
+    "children": [
+      {
+        "name": "home",
+        "path": "/",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\home"
+      },
+      {
+        "name": "login",
+        "path": "/login",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login"
+      },
+      {
+        "name": "register",
+        "path": "/register",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login"
+      },
+      {
+        "name": "profile",
+        "path": "/profile/:username",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\profile"
+      },
+      {
+        "name": "settings",
+        "path": "/settings",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\settings"
+      },
+      {
+        "name": "editor",
+        "path": "/editor/:slug?",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\editor"
+      },
+      {
+        "name": "article",
+        "path": "/article/:slug?",
+        "component": "C:\\\\Users\\\\laylw\\\\Desktop\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\article"
+      }
+    ]
+  }
+]
